@@ -40,10 +40,16 @@ public class PersonController {
         return this.service.getAllPeople();
     }
 
-    @GetMapping(path = "{id}")
+    @GetMapping(path = "id/{id}")
     //note- this one should not be optional, you either return the person or null
     public Person getPersonById(@PathVariable("id") UUID id) {
         return this.service.getPersonById(id).orElse(null);
+    }
+
+    @GetMapping(path = "name/{name}")
+    //note- this one should not be optional, you either return the person or null
+    public Person getPersonByName(@PathVariable("name") String name) {
+        return this.service.getPersonByName(name).orElse(null);
     }
 
     @DeleteMapping(path = "{id}")

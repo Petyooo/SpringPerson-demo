@@ -22,6 +22,8 @@ public interface PersonDao {
 
     Optional<Person> getPersonById(UUID id);
 
+    Optional<Person> getPersonByName(String name);
+
     List<Person> getAllPeople();
 
     void deletePersonByID(UUID id);

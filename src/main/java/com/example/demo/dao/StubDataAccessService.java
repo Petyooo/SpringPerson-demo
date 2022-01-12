@@ -35,6 +35,12 @@ public class StubDataAccessService implements PersonDao {
     }
 
     @Override
+    public Optional<Person> getPersonByName(String name) {
+        Optional<Person> person = peopleDB.stream().filter(p -> p.getName().equals(name)).findFirst();
+        return person;
+    }
+
+    @Override
     public List<Person> getAllPeople() {
         return peopleDB;
     }

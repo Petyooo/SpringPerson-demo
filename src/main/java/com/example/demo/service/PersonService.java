@@ -35,6 +35,10 @@ public class PersonService {
         return personDao.getPersonById(id);
     }
 
+    public Optional<Person> getPersonByName(String name) {
+        return personDao.getPersonByName(name);
+    }
+
     public List<Person> getAllPeople() {
         return personDao.getAllPeople();
     }
